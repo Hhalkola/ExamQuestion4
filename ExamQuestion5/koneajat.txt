@@ -1,0 +1,12 @@
+1;Korkeavarasto;101;12
+1;Korkeavarasto;102;13
+2;Porausasema;101;6
+3;Kokoonpano;101;50
+2;Porausasema;102;7
+4;Tarkistus;101;2
+3;Kokoonpano;102;54
+1;Korkeavarasto;103;6
+2;Porausasema;103;9
+4;Tarkistus;102;2
+3;Kokoonpano;103;44
+4;Tarkistus;103;1
