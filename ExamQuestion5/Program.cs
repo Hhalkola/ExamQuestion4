@@ -38,12 +38,31 @@ namespace ExamQuestion4
                     int koneaika = int.Parse(taulukko[3]);
                     //Luodaan uusi olio joka lisätään listaan
                     tuotantotapahtumat.Add(new Tuotantotapahtuma(koneid, koneennimi, tuoteid, koneaika));
+
+                    //Jos avainta ei ole olemassa -> Tehdään uusi itemi dictionaryyn
+                    //Avaimena käytetään tuoteid:ta
+                    if (valmistusAjat.ContainsKey(tuoteid) == false)
+                    {
+                        valmistusAjat.Add(tuoteid, koneaika);
+                    }
+                    //Jos avain on olemassa, kasvatetaan valueta
+                    else if(valmistusAjat.ContainsKey(tuoteid))
+                    {
+                        valmistusAjat[tuoteid] = valmistusAjat[tuoteid] + koneaika;
+                    }
+
                 }
             }
             //Tulostetaan listan itemit/oliot
             foreach (var item in tuotantotapahtumat)
             {
                 Console.WriteLine(item);
+            }
+
+            //Tulostetaan dictionary
+            foreach (var item in valmistusAjat)
+            {
+                Console.WriteLine($"avain {item.Key} koneaika yhteensä {item.Value} sekuntia.");
             }
             Console.ReadLine();
         }
