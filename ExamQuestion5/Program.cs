@@ -46,17 +46,16 @@ namespace ExamQuestion4
                         valmistusAjat.Add(tuoteid, koneaika);
                     }
                     //Jos avain on olemassa, kasvatetaan valueta
-                    else if(valmistusAjat.ContainsKey(tuoteid))
+                    else 
                     {
                         valmistusAjat[tuoteid] = valmistusAjat[tuoteid] + koneaika;
                     }
-
                 }
             }
             //Tulostetaan listan itemit/oliot
             foreach (var item in tuotantotapahtumat)
             {
-                Console.WriteLine(item);
+                Console.WriteLine(item.ToString());
             }
 
             //Tulostetaan dictionary
